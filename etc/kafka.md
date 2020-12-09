@@ -50,7 +50,10 @@
 # 명령어
 - zookeeper 실행 `./bin/zookeeper.server.start.sh ./config/zookeeper.properties`
 - kafka server 실행 `./bin/kafka-server-start.sh ./config/server.properties`
+- topic 생성 `./bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 3 --topic event.join`
+- topic 목록 조회 `./bin/kafka-topics.sh --list --zookeeper localhost:2181
 - 메시지 전송 및 읽기
+  - 브로커 리스트 목록에 대해 메시지 전송 `./bin/kafka-console.producer.sh --broker-list localhost:9092 --topic event.join`
   - producer(메시지 전송) `./bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --topic test`
   - consumer(메시지 읽기) `./bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test`
     - 이전 메시지까지 읽어오기 `./bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --from-beginning`

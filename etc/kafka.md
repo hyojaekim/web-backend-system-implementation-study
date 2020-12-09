@@ -35,6 +35,18 @@
 - 컨슈머 문제에 의해 발생
 - 메시지 소비 속도가 너무 느리거나, 주키퍼 또는 카프카 연결이 끊어지는 등 이러한 이유로 인해 렉이 발생
 
+# Kafka Cluster
+- ex) logs 토픽 정보: partition 3, replication-factor 2
+- kafka broker 1
+  - **Partition 0 / Replica 1**
+  - Partition 2 / Replica 1
+- kafka broker 2
+  - Partition 0 / Replica 2
+  - **Partition 1 / Replica 2**
+- kafka broker 3
+  - Partition 1 / Replica 3
+  - **Partition 2 / Replica 3**
+
 # 명령어
 - zookeeper 실행 `./bin/zookeeper.server.start.sh ./config/zookeeper.properties`
 - kafka server 실행 `./bin/kafka-server-start.sh ./config/server.properties`
@@ -47,3 +59,4 @@
 - 어떻게 파티셔닝을 할 것인가?
 - 프로듀서, 컨슈머들을 어떻게 분산처리 할 것인가?
 - 특별한 조건들을 두고 어떻게 하면 빠르게 하기 위해 토픽이랑 파티션을 둘 것인가?
+- kafka broker가 죽으면 복제는 어떻게 할 것인가?

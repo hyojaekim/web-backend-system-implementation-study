@@ -57,6 +57,7 @@
   - producer(메시지 전송) `./bin/kafka-console-producer.sh --bootstrap-server localhost:9092 --topic test`
   - consumer(메시지 읽기) `./bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test`
     - 이전 메시지까지 읽어오기 `./bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --from-beginning`
+- [topic 삭제](https://hyojaedev.tistory.com/38)
 
 # 고민
 - 어떻게 파티셔닝을 할 것인가?
